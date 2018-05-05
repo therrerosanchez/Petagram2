@@ -47,4 +47,8 @@ public class RatedActivity extends AppCompatActivity {
         adaptadorRated = new MascotaAdaptador(mascotasRated, this);
         listaDeMascotasRated.setAdapter(adaptadorRated);
     }
+
+    public void onClickBack(View view) {
+        onBackPressed();
+    }
 }
