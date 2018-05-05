@@ -1,9 +1,12 @@
 package org.therrero.petagram;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+
 import java.util.ArrayList;
 
 
@@ -38,10 +41,19 @@ public class MainActivity extends AppCompatActivity {
         mascotas.add(new Mascota("Chispas", R.drawable.mascota3,0));
         mascotas.add(new Mascota("Toby",R.drawable.mascota4,0));
         mascotas.add(new Mascota("Kiki",R.drawable.mascota5,0));
+        mascotas.add(new Mascota("Miky",R.drawable.mascota6,0));
+        mascotas.add(new Mascota("Trump",R.drawable.mascota7,0));
+        mascotas.add(new Mascota("Aris",R.drawable.mascota8,0));
+
     }
 
     public void inializarAdaptador(){
         adaptador = new MascotaAdaptador(mascotas, this);
         listaDeMascotas.setAdapter(adaptador);
+    }
+
+    public void onClick(View view) {
+        Intent intent = new Intent(MainActivity.this, RatedActivity.class);
+        startActivity(intent);
     }
 }
